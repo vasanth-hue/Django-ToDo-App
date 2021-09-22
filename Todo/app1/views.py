@@ -1,11 +1,50 @@
-from Todo.app1.admin import AdminApp1
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from . models import App1
+from . models import *
+from . forms import *
+
+
+
 # Create your views here.
 def index(request):
-    app1 = App1.objects.all()
+    create = Create.objects.all()
 
-    context = {'app1':app1}
-    
+    form = CreateForm()
+
+    if request.method == 'POST':
+        form = CreateForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+        
+  
+    context = {'create':create, 'form':form}
     return render(request, 'index.html', context)
+
+
+def UpdateCreate(request, pk):
+    create = Create.objects.get(id=pk)
+
+    form = CreateForm(instance=create)
+
+    if request.method == 'POST':
+        form = CreateForm(request.POST, instance=create)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+
+    context = {'form': form}
+
+    return render(request, 'update_create.html', context)
+
+
+def deleteTask(request, pk):
+    item = Create.objects.get(id=pk)
+
+    if request.method == 'POST':
+        item.delete()
+        return redirect('/')
+
+    context = {'item':item}
+
+    return render(request, 'delete.html', context)

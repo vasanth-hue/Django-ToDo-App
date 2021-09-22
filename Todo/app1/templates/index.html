@@ -2,11 +2,37 @@
 
 
 {% block content %}
+<div class=" bg-secondary rounded   mainpage ">
 
-<h1>vasanth</h1>
+<h1 class="text-dark text-center pt-5"> Ease Your Activities </h1>
 
-{% for i in app1 %}
+<form class="indexform" method="POST" action="/">
 
-{% endfor %}
+    {% csrf_token %}
+
+     {{ form.title }}  
+    <input class="submitbtn p-2 " type="submit" name="Create Todo">
+
+</form>
+
+    
+        {% for x in create %}
+            <div class="UpDelCol container-fluid mt-3 ">
+                <a class="btnUpdate text-decoration-none  btn-dark" href="{% url 'update_create' x.id %}">update</a>
+                <a class="Deletebtn text-decoration-none  btn-light" href="{% url 'delete' x.id %}">Delete</a>
+            
+                {% if x.complete == True %}
+                <strike class="activites mx-3 fw-bold "> {{ x }} </strike>
+                {% else %}
+                <Span class="activites mx-3 fw-bold ">{{ x }}</Span>
+            
+                {% endif%}
+            </div>  
+        {% endfor %} 
+    </div>
+    
+           
+
+
 
 {% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="shadow rounded bg-light  update ">
+
+        <h2 class="text-center pt-5 fw-bolder">ToDo Updates</h2>
+
+        <form method='POST' action="">
+            {% csrf_token %}
+
+            <div class=" fw-bold fs-5 updateForm ">{{form}}</div>
+            <div class="text-center  "><input class="mt-5 mb-5 bg-dark text-light p-1" type="submit" 
+                name="Update Create"></div>
+
+            
+        </form>
+
+    </div>
+{% endblock content %}

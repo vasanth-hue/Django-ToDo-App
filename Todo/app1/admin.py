@@ -1,11 +1,12 @@
+
 from django.contrib import admin
-from . models import App1
+from . models import Create
 
 # Register your models here.
 
-class AdminApp1(admin.ModelAdmin):
+class AdminCreate(admin.ModelAdmin):
     list = ["title", "complete", "created"]
 
 
 
-admin.site.register(App1)
+admin.site.register(Create)
