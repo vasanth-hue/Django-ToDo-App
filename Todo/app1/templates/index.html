@@ -3,10 +3,14 @@
 
 {% block content %}
 <div class=" bg-secondary rounded   mainpage ">
+    <div class="logout accordion-body mt-4">
+        <a href="/" class="bg-light text-center rounded  text-decoration-none  p-1 text-dark  ">logout</a>
+        </div>
+<h1 class="text-dark text-center pt-3"> Ease Your Activities {{user.username}} </h1>
 
-<h1 class="text-dark text-center pt-5"> Ease Your Activities </h1>
+   
 
-<form class="indexform" method="POST" action="/">
+<form class="indexform" method="POST" action="index">
 
     {% csrf_token %}
 
@@ -29,8 +33,16 @@
                 {% endif%}
             </div>  
         {% endfor %} 
+
+     
     </div>
-    
+
+
+    <style>
+        .logout{
+            margin-left: 90%;
+        }
+    </style>
            
 
 

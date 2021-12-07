@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}      
+
+
+
+<!--Login--> 
+<div class="container bg-secondary rounded loginage" style="color:black;font-weight:bold;font-size:large;margin-top:6%; margin-left: 20%; margin-top: 8%;
+height:auto; width: 60%; margin-left: 20%; padding-bottom: 15mm;"  >
+  <h1 class="mt-4 py-3 text-center">Login-Form</h1>
+  <form method="POST" class=" text-start"  >
+    {% csrf_token %}
+    <div class="LoginForm"  >      
+      {{ login_form}}
+      
+
+    </div>
+    <div class="text-center mt-4 p-1">
+    <button class="btn btn-primary " type="submit">Login</button>
+  </div>
+  </form>
+  <p class="text-center mt-4  ">Don't have an account? <a href="/register" class="text-light text-decoration-none">Create an account.</a></p>
+</div>
+
+<style>
+  #id_complete, input {
+    padding: 2mm;
+    width: 65%;
+    margin-left: 8.7%;
+    margin-top: 1%;
+}
+input[type="text" i] {
+  margin-top: 5mm;
+  width: 65%;
+  margin-left: 8%;
+}
+</style>
+
+{% endblock %}

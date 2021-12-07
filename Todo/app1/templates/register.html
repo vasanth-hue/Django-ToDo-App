@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block content %} 
+        
+
+<!--Register--> 
+<div class="container bg-secondary rounded loginage mt-4 " style="text-align:left;color:black;font-weight:bold;font-size:large;height:auto; width: 60%;  padding-bottom: 15mm;"  >
+	<h1 class="text-center pt-3">Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form}}   
+		<div class="text-center p-1">                 
+		<button class="btn btn-primary my-3 " type="submit">Register</button>
+	</div>
+	</form>
+	<p class="text-center ">If you already have an account, <a class="text-decoration-none text-light" href="/">login</a> instead.</p>
+</div>
+<style>
+	span{
+		line-break: auto;
+		padding-left: 8%;
+		margin-left: 17%;
+	}
+	#id_username{
+		margin-left: 3%;
+	}
+	#id_email{
+		margin-top: 2%;
+		margin-left: 7.5%;
+		width: 75.5%;
+	}
+	#id_password1{
+		margin-top: 2%;
+		margin-left: 3.8%;
+		width: 75.5%;
+	}
+	#id_password2{
+		margin-top: 2%;
+		margin-left: 5.5%;
+		width: 75.5%;
+	}
+	dl, ol, ul {
+		margin-left: 16%;
+	}
+	element.style {
+		margin-left: 22%;
+	}
+	
+</style>
+{% endblock %}

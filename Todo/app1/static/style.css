@@ -17,6 +17,8 @@
 
  }
 
+
+
 input[type="text" i] 
     
 {
@@ -52,18 +54,17 @@ input[type="text" i]
     font-weight: 650;
     
 }
-
-.UpDelCol
+.LoginForm{
+    margin: 0;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529
+}
+.logout
 {
-    
-    
-    
-    
-
-
-
-    
-    
+   margin-left: 50%; 
 }
 
 
@@ -76,7 +77,11 @@ input[type="text" i]
     width: 50%;
     font-family: cursive;
 }
+#id_username{
+    margin-left: 40% ;
+    padding: 10mm;
 
+}
 .updateForm
 {
     
@@ -128,9 +133,10 @@ input[type="text" i]
     padding: 10mm;
     padding-top:1mm;
     padding-bottom: 1mm;
-    padding-left: 10mm;
-    padding-right: 10mm;
+    padding-left: 8mm;
+    padding-right: 8mm;
     font-weight: 650; color: antiquewhite;
     font-size: 30px;
     
 }
+
